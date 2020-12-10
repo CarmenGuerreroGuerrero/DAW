@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 Ejercicio 9</title>
+</head>
+<body>
+    <h1>Lista 1 Ejercicio 9</h1>
+    <p>¿Es un palíndromo?</p>
+    <p>Escribe la palabra o frase que desee saber si es un palíndormo o no: <input type="text" name="" id="texto"><button onclick="palindromo()">Solución</button></p>
+    <p id="cadena"></p>
+    <p id="solucion"></p>
+
+    <script>
+        /* Definir una función que determine si la cadena de texto que se le pasa como
+parámetro es un palíndromo, es decir, si se lee de la misma forma desde la
+izquierda y desde la derecha. Ejemplo de palíndromo complejo: "La ruta nos aporto
+otro paso natural". */
+        function palindromo(){
+            let cadena = document.getElementById("texto").value;
+            let cadenaSinEspacios = (cadena.replace(/ /g, "")).toLowerCase();
+            let arrayCadena= cadenaSinEspacios.split("");
+            let arrayCadenaReves = cadenaSinEspacios.split("").reverse();
+
+            document.getElementById("cadena").innerHTML=cadena+".";
+
+            for(let i=0; i<=arrayCadena.length;i++){
+                if(arrayCadena[i]!=arrayCadenaReves[i]){
+                    document.getElementById("solucion").innerHTML = "La frase o palabra introducida NO es un palíndromo."
+                    
+                }
+                else{
+                    document.getElementById("solucion").innerHTML = "La frase o palabra introducida es un palíndromo."
+                }
+            }
+
+            
+        }
+    </script>
+</body>
+</html>

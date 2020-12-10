@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 Ejercicio 2</title>
+</head>
+<body>
+    <p> Presentar en la página el texto “Javascript” en los 6 diferentes tipos de cabecera HTML, de mayor a menor.</p>
+    <button onclick="mostrar()">Representar cabeceras</button>
+    <div id="cabeceras"></div>
+
+    <script>
+        /* Presentar en la página el texto “Javascript” en los 6 diferentes tipos de cabecera HTML, de mayor a menor. */
+        
+        function cabeceras (){
+            let texto ="";
+            for(let i = 1; i<=6; i++){
+                texto+="<h"+i+">Javascript</h"+i+">";
+            }
+            return texto;
+        }
+        function mostrar(){
+            document.getElementById("cabeceras").innerHTML=cabeceras();
+        }
+    </script>
+</body>
+</html>

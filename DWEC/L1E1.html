@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 Ejercicio 1</title>
+    
+</head>
+<body>
+    <h1>Lista 1 Ejercicio 1</h1>
+    <h2>Tabla de multiplicar</h2>
+    <p>Introduzca el número del que desea hacer la tabla de multiplicar.<input type="number" name="" id="numero"> <button onclick="mostrar()">Presentar tabla de multiplicar</button></p>
+    <div id="tabla"></div>
+
+    <script>
+        /* Solicitar un número y presentar su tabla de multiplicar. */
+
+        function Tabla (){
+            let numero = document.getElementById("numero").value;
+            let salida = "";
+            for(let i =0; i<=10; i++){
+                salida += numero+" x "+i+" = "+ (i*numero) + "<br>";
+        
+            }
+            return salida;
+        }
+
+        function mostrar (){
+            document.getElementById("tabla").innerHTML = Tabla();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 Ejercicio 5</title>
+</head>
+<body>
+    <h1>Lista 1 ejercicio 5</h1>
+    <p id="cadena"></p>
+    <p id="nElementos"></p>
+    <p id="palabras"></p>
+    <p id="inverso"></p>
+    <p id="ordenAZ"></p>
+    <p id="ordenZA"></p>
+    
+
+    <script>
+    /*   
+    Leer una cadena de texto mediante el método prompt() y generar un array con las palabras que contiene. 
+    Posteriormente, mostrar la siguiente información: 
+    Número de palabras
+    Primera palabra y última palabra
+    Las palabras colocadas en orden inverso
+    Las palabras ordenadas de la a la z
+    Las palabras ordenadas de la z a la a
+    */
+        let texto = prompt("Escribe una cadena de texto.");
+        let cadena = (texto.replace(",","")).toLowerCase();
+        let arrayCadena = cadena.split(" ");
+        
+        document.getElementById("cadena").innerHTML= "La cadena introducida es: " +texto+".";
+
+        /* Número de palabras */
+        document.getElementById("nElementos").innerHTML= "La cadena introducida tiene "+ arrayCadena.length + " palabras.";
+
+        /* Primera palabra y última palabra */
+        document.getElementById("palabras").innerHTML="La primera palabra es "+arrayCadena[0].toString()+" y las última es "+(arrayCadena[arrayCadena.length-1]).toString()+".";
+
+        /* Las palabras colocadas en orden inverso */
+        let arrayReverse = arrayCadena.reverse();
+        let reverse = new String(arrayReverse);
+        let inverso = reverse.replace(/,/g," ");
+        document.getElementById("inverso").innerHTML = "Las palabras de la cadena colocadas en orden inverso: "+inverso;
+
+        /* Las palabras ordenadas de la a la z */
+        let arrayOrden = arrayCadena.sort();
+        let orden = new String(arrayOrden);
+        let pOrden= orden.replace(/,/g," ");
+        document.getElementById("ordenAZ").innerHTML = "Las palabras de la cadena ordenadas alfabeticamente de la A a la Z: "+pOrden;
+
+        /* Las palabras ordenadas de la z a la a */
+        
+        let arrayZA = arrayOrden.reverse();
+        let zA= new String(arrayZA);
+        let pZA= zA.replace(/,/g," ");
+
+        document.getElementById("ordenZA").innerHTML = "Las palabras de la cadena ordenadas alfabéticamente de la Z a la A: "+ pZA; 
+
+    </script>
+</body>
+</html>

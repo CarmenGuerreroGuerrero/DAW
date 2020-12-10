@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 Ejercicio 8</title>
+</head>
+<body>
+    <h1>Lista 1 Ejercicio 8</h1>
+    <p>El cálculo de la letra del NIF es un proceso matemático sencillo que se basa en
+        obtener el resto de la división entera del número de DNI y el número 23. A partir
+        del resto de la división, se obtiene la letra seleccionándola según el siguiente orden:
+    </p>
+    <p>T R W A G M Y F P D X B N J Z S Q V H L C K E</p>
+    <p>Por tanto si el resto de la división es 0, la letra del DNI es la T y si el resto es 3 la
+        letra es la A. Elaborar un pequeño script que solicite en un campo de texto el DNI
+        de un individuo y en otro la letra del mismo y compruebe si los datos son correctos
+        o no.</p>
+
+    <p>Introduce tu número de DNI <input type="number" name="" id="nDni"></p>
+    <p>Introduce tu letra de DNI <input type="text" name="" id="letra"></p>
+    <button onclick="Comprobar()">Comprobar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function Comprobar(){
+            let nDni = document.getElementById("nDni").value;
+            let letra = document.getElementById("letra").value;
+            let letrasPosibles = "TRWAGMYFPDXBNJZSQVHLCKE";
+            let resto = nDni%23;
+          
+            if(letra==letrasPosibles.charAt(resto)){
+                document.getElementById("resultado").innerHTML="Los datos introducidos son correctos.";
+            }
+            else{
+                document.getElementById("resultado").innerHTML="Los datos introducidos son incorrectos.";
+            }
+
+
+        }
+    </script>
+</body>
+</html>

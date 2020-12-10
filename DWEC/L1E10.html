@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 Ejercicio 10</title>
+</head>
+<body>
+    <h1>Cambia de color</h1>
+    <p>Pulsa en el color que prefieras para cambiar de color el siguiente texto: </p>
+    <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, culpa. Molestias, vel debitis repellendus fugit accusamus in! Nesciunt esse facilis quas! Architecto, ad iure. Vero ipsam quos animi unde libero!</p>
+    <p><button id="rojo" style="background-color:red;">ROJO</button><button id="verde" style="background-color:green;">VERDE</button><button id="violeta" style="background-color:violet;">VIOLETA</button><button id="rosa" style="background-color:pink;">ROSA</button><button id="azul" style="background-color:blue;">AZUL</button></p>
+    <script>
+        /* Escribe un script que contenga un párrafo y cinco botones. Cada uno de los
+botones debe tener como etiqueta el nombre de un color y al pulsarlo pondrá el
+color del párrafo del mismo color que indica. */
+        document.getElementById("rojo").onclick=function(){document.getElementById("texto").style.color="red"};
+        document.getElementById("verde").onclick=function(){document.getElementById("texto").style.color="green"};
+        document.getElementById("violeta").onclick=function(){document.getElementById("texto").style.color="violet"};
+        document.getElementById("rosa").onclick=function(){document.getElementById("texto").style.color="pink"};
+        document.getElementById("azul").onclick=function(){document.getElementById("texto").style.color="blue"};
+    </script>
+</body>
+</html>
